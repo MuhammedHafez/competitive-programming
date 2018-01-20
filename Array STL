@@ -1,0 +1,54 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int arr[10]={1,2,3,4,5,6,7,8,9};
+    int arr2[10];
+    array<int,10> arr1;  // Same : int arr1[100];
+
+    for(int i=0;i<5;i++)
+    {
+        arr[i]=i;
+        arr1.at(i)=i; // to access index  => Same arrr1[i]=i;
+    }
+    cout<< get<1>(arr1)<<endl; //cout<< arr[1] ;
+   for(int i=0;i<5;i++)
+    {
+    cout<<arr[i]<<" ";
+    cout<<arr1.at(i)<<endl;  // cout<<arr[i];
+    }
+    
+    cout<<arr1.front()<<endl; // cout<<arr[0];
+    
+    cout<<arr1.back()<<endl;  // cout<<arr[n-1];
+    
+    cout<<arr1.max_size()<<endl; //Same  cout<<arr1.size()<<endl;
+    
+    cout<<arr1.empty()<<endl; // It will return 1 if arr1 empty otherwise 0.
+
+    arr1.fill(1); // it will put in every index in array value (1).
+
+
+    if(all_of(arr,arr+10,[](int x){ return x<0; })) //it uses to check if every element in array is negative or positive .
+        cout<<"YES";
+    else cout<<"NO";
+
+    if(any_of(arr,arr+10,[](int x){return x<0;})) //it uses to check if array has negative number.
+        cout<<"YES";
+    else cout<<"NO";
+
+    if(none_of(arr,arr+10,[](int x){return x<0;})) //it uses to check if array dont have any negative number.
+        cout<<"NO";
+    else
+        cout<<"YES";
+
+    copy_n(arr,10,arr2); // copy elements in arr to arr2.
+    iota(arr,arr+7,20); // it will fill from front to index(6) 20 and increase it every time ={20,21,22,23,24,25,26}.
+    for(int i=0;i<10;i++)
+    {
+        cout<<arr[i]<<" "<<arr2[i]<<endl;
+    }
+     return 0;
+}
